@@ -5,7 +5,7 @@
 <textarea name="ask" placeholder="이현봇에게 할 말을 적어주세요"></textarea>
 <h3>이렇게 대답할 거에요</h3>
 <textarea name="answer" placeholder="이현봇이 대답할 말을 적어주세요"></textarea><br>
-<input type="submit" value="가르치기"><br>
+<input type="submit" value="가르치기" onclick="return confirm('가르침당했습니다.')" /><br>
 <% end %> 
 
-<a href="/">돌아가기</a>
+<a href="/"><button>그만 가르치기</button></a>

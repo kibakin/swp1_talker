@@ -1,21 +1,29 @@
+<div style ="text-align:center">
 <h1>~이현봇~</h1>
 <h2>등록되지 않은 말에는 반응안함..</h2>
-<h3>핸폰 스크롤바 없음..ㅎ 화면 아래로 내리셈</h3>
-<a href="/learn">가르치러가기</a><br>
+    <a href="/learn">
+        <button>말 가르치러가기</button>
+    </a><br>
+</div>
 
-
-<% @chats.each do |c| %>
+    <div style="overflow:scroll; width:300px; height:300px; padding:10px;">
+    <% @chats.each do |c| %>
     <% if c.chat_type == "bot" %>
-    Bot
+    <div style="text-align:left">
+    <strong>이현봇 :</strong>
     <%= c.chat_content %><br>
+    </div>
     <% else %>
-    User
-    <%= c.chat_content %><br>
+    <div style="text-align:right">
+    <strong>너 :</strong> 
+    <%= c.chat_content %><br><br>
+    </div>
     <% end %>
 <% end %>   
+</div>
 
     
 <%= form_tag '/talker', method: 'post' do %>
-<input type="text" placeholder="할말 쓰기" name="ask"></textarea>
+<input type="text" placeholder="이현봇에게 할 말 쓰기" name="ask">
 <input type="submit" value="입력">
 <% end %>
