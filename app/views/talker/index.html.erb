@@ -1,1 +1,21 @@
-<h1>talker index 페이지입니다.</h1>
+<h1>~이현봇~</h1>
+<h2>등록되지 않은 말에는 반응안함..</h2>
+<h3>핸폰 스크롤바 없음..ㅎ 화면 아래로 내리셈</h3>
+<a href="/learn">가르치러가기</a><br>
+
+
+<% @chats.each do |c| %>
+    <% if c.chat_type == "bot" %>
+    Bot
+    <%= c.chat_content %><br>
+    <% else %>
+    User
+    <%= c.chat_content %><br>
+    <% end %>
+<% end %>   
+
+    
+<%= form_tag '/talker', method: 'post' do %>
+<input type="text" placeholder="할말 쓰기" name="ask"></textarea>
+<input type="submit" value="입력">
+<% end %>
